@@ -1,0 +1,87 @@
+name: ascendedprison
+main: com.psygate.minecraft.spigot.sovereignty.ascendedprison.AscendedPrison
+version: 1.0
+author: psygate
+depend: [nucleus, tagtonics]
+description: A plugin replacing Prison pearl, allowing for a more fine grained control of imprisonment.
+
+commands:
+    locateprison:
+      description: Shows the location of your prison.
+      permission: ascendedprison.prisoner.locate
+      usage: /locateprison
+      default: true
+      aliases: [apl, aplp]
+
+    summonprisoner:
+      description: Summons the prisoner of the prison you're holding.
+      permission: ascendedprison.prisoner.summon
+      usage: /summonprisoner
+      default: true
+      aliases: [apps, ppsummon]
+
+    returnprisoner:
+      description: Returns the prisoner of the prison you're holding.
+      permission: ascendedprison.prisoner.return
+      usage: /returnprisoner
+      default: true
+      aliases: [appr, ppreturn]
+
+    imprisonany:
+      description: Imprisons any player by name or uuid.
+      permission: ascendedprison.admin.imprisonany
+      usage: /imprisonany <name>
+      default: op
+
+    setleash:
+      description: Shows the location of your prison.
+      permission: ascendedprison.prisoner.setleash
+      usage: /setleash <distance>
+      default: true
+      aliases: [apsl]
+
+    free:
+      description: Frees a prisoner.
+      permission: ascendedprison.prisoner.free
+      usage: /free
+      default: true
+      aliases: [apf]
+
+permissions:
+    ascendedprison.combattag.logout:
+      default: true
+    ascendedprison.combattag.nonpc:
+      default: false
+    ascendedprison.prisoner.locate:
+      default: true
+    ascendedprison.admin.imprisonany:
+      default: op
+    ascendedprison.prisoner.return:
+        default: true
+    ascendedprison.prisoner.summon:
+      default: true
+    ascendedprison.prisoner.setleash:
+      default: true
+    ascendedprison.prisoner.free:
+      default: true
+
+
+    ascendedprison.managment.deleteall:
+        default: op
+    ascendedprison.managment.locateprison:
+        default: op
+    ascendedprison.managment.imprisonany:
+        default: op
+    ascendedprison.managment.freeany:
+        default: op
+    ascendedprison.imprisoner.mute:
+        default: true
+    ascendedprison.imprisoner.pvp:
+        default: true
+    ascendedprison.imprisoner.leashdistance:
+        default: true
+    ascendedprison.imprisoner.kill:
+        default: true
+    ascendedprison.imprisoner.check:
+        default: true
+       

@@ -1,0 +1,101 @@
+combattag:
+  tag_time: 30s
+  kill_on_tagged_quit: true
+  npc_on_quit: true
+  npc_despawn_ticks: 600
+  logout_timer: 30s
+
+binding:
+  bind_item: MAGMA_CREAM
+  require_hotbar: true
+  bind_strategy: DAMAGE
+  enchants: [DURABILITY]
+  name: "<aqua>Soul of <bound_name>"
+  lore: "<gold>Bound: <bound_name>\n<gold>UUID: <bound_uuid>\n<dark_red>Binder: <binder_name>\n<dark_red>UUID: <binder_uuid>\n<dark_purple>Date: <date>"
+
+imprisonment:
+  prison_world:
+    name: prison
+    # NETHER, NORMAL, THE_END
+    environment: NORMAL
+    # AMPLIFIED, CUSTOMIZED, FLAT, LARGE_BIOMES, NORMAL
+    type: FLAT
+
+  default_free_world: world
+
+  no_bind_worlds:
+    - prison
+
+  no_prison_stealing_worlds:
+    - prison
+
+  summon_delay: 100
+
+  cycle_time: 24h
+
+base:
+    soul_bind_item: ENDER_PEARL
+    require_hotbar: true
+    use_combattag: false
+    # Tag time in seconds
+    combat_timer: 30
+    # DAMAGE or LAST_TAG
+    bind_strategy: DAMAGE
+    # Allow already pearled people to be pearled again
+    allow_prisoner_stealing: false
+    binding_unsets_bed: true
+    # This sets whether people can use portals while having prison items.
+    can_use_portal_with_prison: false
+    # If the above is false, this will come into play. Either DROP or CANCEL
+    portal_deny_strategy: DROP
+    # How players are freed.
+    # SPAWN_ON_ITEM: Prisoner will be freed where the prison item was invalidated.
+    # RANDOM_SPAWN: Prisoner will be random spawned in the world where the prison item was destroyed.
+    # SPAWN_HOME: Prisoner will be spawned at her old bed location.
+    prisoner_free_strategy: SPAWN_ON_ITEM
+    
+combat:
+    kill_on_tagged_quit: true
+    npc_on_untagged_quit: true
+    npc_on_untagged_time: 30
+
+bound_souls:
+    summonable: true
+    # Delay until someone is really summoned in seconds
+    summon_delay: 5
+    
+no_bind_worlds:
+    - prison
+
+prison_upkeep:
+    enabled: true
+    # Either ALL_AT_ONCE, which means all pearls will consume items at the same time,
+    # or INDIVIDUALLY, which means each pearl will tick individually.
+    strategy: ALL_AT_ONCE
+    # Either ON_RESTART or TICKING.
+    # ON_RESTART will tick every restart,
+    # TICKING will continuously tick prisons to check for consumption.
+    upkeep_timing: TICKING
+    # Delay in minutes between feed cycles.
+    feed_delay: 10
+    feed_cost:
+        - material: BREAD
+          amount: 1
+        - material: GOLD_INGOT
+          amount: 3
+
+world_transit:
+    # Either DROP, CHEST or NONE
+    summoning_item_managment: DROP
+    # Either DROP, CHEST or NONE
+    returning_item_managment: DROP
+
+imprisoner:
+    max_prisoners: 5
+
+prison_world:
+    name: prison
+    # NETHER, NORMAL, THE_END
+    environment: NORMAL
+    # AMPLIFIED, CUSTOMIZED, FLAT, LARGE_BIOMES, NORMAL
+    type: AMPLIFIED
